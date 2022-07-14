@@ -10,6 +10,7 @@ public class Trash : MonoBehaviour
 
     Transform Monster;
     Rigidbody2D rd;
+    Player Player;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class Trash : MonoBehaviour
         Monster = GameObject.FindGameObjectWithTag("Monster").GetComponent<Transform>();
         rd = GetComponent<Rigidbody2D>();
 
-        /*dir = Monster.rotation.eulerAngles;*/ //몬스터 방향 설정하고 풀기.
+        dir = Monster.rotation.eulerAngles;
     }
 
     // Update is called once per frame
@@ -25,14 +26,14 @@ public class Trash : MonoBehaviour
     {
         T += Time.deltaTime;
 
-        /* if (dir[1] <= 0)
+        if (dir[1] <= 0)
         {
             rd.velocity = new Vector2(speed, 0f);
         }
         else if (dir[1] > 0)
         {
             rd.velocity = new Vector2(-speed, 0f);
-        } */ //몬스터 방향 설정하고 풀기.
+        }
 
         if (T >= 2f) //사거리 설정.
         {
@@ -46,13 +47,14 @@ public class Trash : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("공격 데미지 입히기");
+            Player = other.GetComponent<Player>();
+            Player.TakeDamage(1);
+
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }

@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
     private float v = 0f;
     private float point;
     private float dis_P;
+    private float time = 0f;
 
     public GameObject Sight;
     public GameObject Player;
@@ -37,6 +38,14 @@ public class Monster : MonoBehaviour
         {
             Debug.Log("Player АјАн");
             attack();
+
+            time += Time.deltaTime;
+
+            if (time >= 2.0f)
+            {
+                Instantiate(Trash, gameObject.transform.position, Quaternion.identity);
+                time = 0f;
+            }
         }
         else if (sight.meet == false)
         {
