@@ -22,12 +22,12 @@ public class Player_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //ÁÂÅ¬¸¯ »Ð¸ÁÄ¡
+        if (Input.GetKeyDown(KeyCode.Z)) //ÁÂÅ¬¸¯ »Ð¸ÁÄ¡
         {
             Hammer.SetActive(true);
             
         }
-        else if(Input.GetMouseButtonDown(1)) //¿ìÅ¬¸¯ ¸Ô¹°
+        else if(Input.GetKeyDown(KeyCode.X)) //¿ìÅ¬¸¯ ¸Ô¹°
         {
             Instantiate(gun, Player.position, Quaternion.identity);
         }

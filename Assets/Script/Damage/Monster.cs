@@ -8,7 +8,7 @@ public class Monster : MonoBehaviour
     private float v = 0f;
     private float point;
     private float dis_P;
-    private float time = 0f;
+    private float time = 0.7f;
 
     public GameObject Sight;
     public GameObject Player;
@@ -41,7 +41,7 @@ public class Monster : MonoBehaviour
 
             time += Time.deltaTime;
 
-            if (time >= 2.0f)
+            if (time >= 1.0f)
             {
                 Instantiate(Trash, gameObject.transform.position, Quaternion.identity);
                 time = 0f;
@@ -69,15 +69,24 @@ public class Monster : MonoBehaviour
 
     private void attack()
     {
+        //Player 바라보기
+        if (0 < Player.transform.position.x - this.transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (0 > Player.transform.position.x - this.transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+        //사거리 밖이면 쫓아가기
         if (-dis_P > Player.transform.position.x - this.transform.position.x)
         {
             Place.velocity = new Vector2(-v, 0f);
-            transform.eulerAngles = new Vector3(0, 180, 0);
         }    
         else if (dis_P < Player.transform.position.x - this.transform.position.x)
         {
             Place.velocity = new Vector2(v, 0f);
-            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         else
         {
