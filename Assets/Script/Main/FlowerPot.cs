@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FlowerPot : MonoBehaviour
 {
+    public GameObject Menu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,4 +22,6 @@ public class FlowerPot : MonoBehaviour
     {
         Debug.Log("저장 되었습니다.");
     }
+
+
 }
