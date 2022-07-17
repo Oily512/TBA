@@ -379,6 +379,7 @@
 "Assets/Script/Damage/Sight.cs"
 "Assets/Script/Damage/thorn.cs"
 "Assets/Script/Damage/Trash.cs"
+"Assets/Script/Dontmove.cs"
 "Assets/Script/Main/FlowerPot.cs"
 "Assets/Script/Main/Menu.cs"
 "Assets/Script/Player/Hammer.cs"

@@ -10,6 +10,8 @@ public class Monster : MonoBehaviour
     private float dis_P;
     private float time = 0.7f;
 
+    public float ran = 8f;
+
     public GameObject Sight;
     public GameObject Player;
 
@@ -60,7 +62,7 @@ public class Monster : MonoBehaviour
             Place.velocity = new Vector2(v, 0f);
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
-        else if (point + 8f <= Place.transform.position.x)
+        else if (point + ran <= Place.transform.position.x)
         {
             Place.velocity = new Vector2(-v, 0f);
             transform.eulerAngles = new Vector3(0, 180, 0);

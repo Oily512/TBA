@@ -19,7 +19,7 @@ public class Fire : MonoBehaviour
         time += Time.deltaTime;
         if (time > 0.1f)
         {
-            this.transform.Translate(new Vector3(0.4f, 0f, 0f));
+            this.transform.Translate(new Vector3(0.45f, 0f, 0f));
             time = 0f;
         }
     }

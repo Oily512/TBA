@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private Animator anim;
 
     private bool W; //Hike 애니메이션 조건
+    private bool J = false; //Jump 애니메이션 조건
     private bool touch; //Obstacle과의 충돌 상태
 
     public float speed;
@@ -37,14 +38,16 @@ public class Player : MonoBehaviour
         PlayerMove.velocity = new Vector2(Direction * speed, PlayerMove.velocity.y);
 
         Jump_Move();
+        J = false;
         hike();
         anim.SetBool("W", W);
         anim.SetBool("M", Direction != 0);
-        anim.SetBool("J", PlayerMove.velocity.y > 0);
+        anim.SetBool("J", J);
     }
 
     private void Jump_Move()
     {
+        J = true;
         //Jump
         if ((touch) && (Input.GetKeyDown(KeyCode.Space) && (PlayerMove.velocity.y < 5f)))
         {
@@ -61,7 +64,7 @@ public class Player : MonoBehaviour
         if ((touch) && ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.UpArrow)))) //벽 타기
         {
             W = true;
-            transform.Translate(new Vector3(0f, 0.03f, 0f));
+            transform.Translate(new Vector3(0f, 0.03f, 0f)); 
         }
         else
             W = false;
