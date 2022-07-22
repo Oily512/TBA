@@ -386,6 +386,7 @@
 "Assets/Script/Player/Player.cs"
 "Assets/Script/Player/Player_Attack.cs"
 "Assets/Script/Player/Squid.cs"
+"Assets/Script/Player/UI.cs"
 "Assets/Script/StartScene/ChangeScene.cs"
 "Assets/Script/StartScene/ClickMouse.cs"
 "Assets/Script/StartScene/OptionMenu.cs"
