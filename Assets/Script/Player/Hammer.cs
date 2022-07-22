@@ -29,7 +29,7 @@ public class Hammer : MonoBehaviour
         if (other.tag == "Monster")
         {
             Monster = other.GetComponent<Monster>();
-            Monster.TakeDamage(1);
+            Monster.TakeDamage(5);
         }
     }
 

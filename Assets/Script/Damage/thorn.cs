@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class thorn : MonoBehaviour
 {
-    const int damage = 1; //이후 수정
+    const int damage = 3; //이후 수정
 
     Player Player;
 

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    private int heart = 1;
+    private int heart = 10;
     private float v = 0f;
     private float point;
     private float dis_P;
     private float time = 0.7f;
 
     public float ran = 8f;
+    public int damage = 3;
 
     public GameObject Sight;
     public GameObject Player;

@@ -7,18 +7,24 @@ public class Trash : MonoBehaviour
     private float speed = 5f;
     private Vector3 dir;
     private float T = 0f;
+    private int dam;
 
-    Transform Monster;
+    GameObject Monster;
+    Transform monster_T;
+    Monster monster_S;
     Rigidbody2D rd;
     Player Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        Monster = GameObject.FindGameObjectWithTag("Monster").GetComponent<Transform>();
+        Monster = GameObject.FindGameObjectWithTag("Monster");
+        monster_T = Monster.GetComponent<Transform>();
+        monster_S = Monster.GetComponent<Monster>();
         rd = GetComponent<Rigidbody2D>();
 
-        dir = Monster.rotation.eulerAngles;
+        dam = monster_S.damage;
+        dir = monster_T.rotation.eulerAngles;
     }
 
     // Update is called once per frame
@@ -48,7 +54,7 @@ public class Trash : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Player = other.GetComponent<Player>();
-            Player.TakeDamage(1);
+            Player.TakeDamage(dam);
 
             Destroy(gameObject);
         }

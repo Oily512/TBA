@@ -13,12 +13,15 @@ public class Player : MonoBehaviour
     public float speed;
     public float Direction;
     public float heart = 100f;
+    //public GameObject die; //오브젝트 유니티 에디터에서 부여
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerMove = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        //die.SetActive(false);
 
         speed = 6f;
     }
@@ -91,7 +94,9 @@ public class Player : MonoBehaviour
         Debug.Log("아파요");
         if (heart <= 0)
         {
-            Debug.Log("죽음"); //코드 추가
+            gameObject.SetActive(false);
+            /*die.SetActive(true);*/
+            
         }
     }
 }

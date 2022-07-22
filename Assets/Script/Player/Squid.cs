@@ -48,7 +48,7 @@ public class Squid : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             Monster = other.GetComponent<Monster>();
-            Monster.TakeDamage(1);
+            Monster.TakeDamage(3);
             Destroy(gameObject);
         }
 

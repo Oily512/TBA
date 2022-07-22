@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI : MonoBehaviour
+public class UI_HP : MonoBehaviour
 {
     //1. Player의 heart를 받아와야 함. 
     //2. 그걸로 local scale을 바꿔야 함. 
@@ -25,7 +25,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        size = (player.heart / 100) * 240;
+        size = (player.heart / 100) * 227;
         rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size);
     }
 }
