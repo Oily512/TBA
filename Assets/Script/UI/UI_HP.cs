@@ -5,14 +5,11 @@ using UnityEngine;
 public class UI_HP : MonoBehaviour
 {
     //1. Player의 heart를 받아와야 함. 
-    //2. 그걸로 local scale을 바꿔야 함. 
-    //2-1 최대값이 얼마인지 알아야 하고
-    //local scale은 최대값/100 *heart
     private Player player;
     private float size;
     private RectTransform rt;
 
-    public GameObject P;
+    public GameObject P; //오브젝트 에디터에서 연결
 
     // Start is called before the first frame update
     void Start()
