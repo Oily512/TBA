@@ -7,6 +7,8 @@ TagManager:
   - Monster
   - Hammer
   - Menu
+  - Obstacle
+  - Item
   layers:
   - Default
   - TransparentFX

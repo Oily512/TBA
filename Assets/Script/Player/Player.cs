@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float Direction;
     public float heart = 100f;
+    public int Ssize = 33;
     //public GameObject die; //오브젝트 유니티 에디터에서 부여
 
     // Start is called before the first frame update
@@ -77,6 +78,19 @@ public class Player : MonoBehaviour
         if (other.tag == "Obstacle") //일반 장애물과 충돌
         {
             touch = true;
+        }
+        else if (other.tag == "Item")
+        {
+            other.gameObject.SetActive(false);
+
+            if (Ssize < 10) //하나보다 적게 사용한 경우.
+            {
+                Ssize = 0;
+            }
+            else
+            {
+                Ssize -= 10;
+            }
         }
     }
 
