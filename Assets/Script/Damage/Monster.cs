@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    private Animator anim;
+
     private int heart = 10;
     private float v = 0f;
     private float point;
@@ -15,7 +17,6 @@ public class Monster : MonoBehaviour
 
     public GameObject Sight;
     public GameObject Player;
-
     public GameObject Trash;
 
     Sight sight;
@@ -28,6 +29,7 @@ public class Monster : MonoBehaviour
         dis_P = Random.Range(4, 8);
 
         Place = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         sight = Sight.GetComponent<Sight>();
 
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -54,6 +56,8 @@ public class Monster : MonoBehaviour
         {
             move();
         }
+
+        anim.SetBool("A", sight.meet);
     }
 
     private void move()
@@ -67,6 +71,11 @@ public class Monster : MonoBehaviour
         {
             Place.velocity = new Vector2(-v, 0f);
             transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (Place.velocity.x == 0)
+        {
+            Place.velocity = new Vector2(v, 0f);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 

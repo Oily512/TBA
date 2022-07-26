@@ -152,7 +152,7 @@ MonoBehaviour:
   speed: 0
   Direction: 0
   heart: 100
-  Ssize: 33
+  Ssize: 0
 --- !u!114 &564913997496409091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 564913997496409088}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: beec78d0195ca7e4e97dc2e0a8f27208, type: 2}
+  m_Controller: {fileID: 9100000, guid: a764c292e7c25d940be708112e800d2f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

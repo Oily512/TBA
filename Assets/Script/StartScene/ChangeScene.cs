@@ -18,7 +18,7 @@ public class ChangeScene : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     //설정창 열기

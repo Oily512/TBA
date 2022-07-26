@@ -8,6 +8,10 @@ public class Player_Attack : MonoBehaviour
     public bool attack = false;
     public int Ssize = 0;
 
+    private bool S = false;
+    private float S_T = 0f;
+
+    private Animator anim;
     private GameObject Hammer;
     private GameObject Player;
 
@@ -17,6 +21,8 @@ public class Player_Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         Player = GameObject.FindGameObjectWithTag("Player");
         Player_T = Player.GetComponent<Transform>();
         Player_P = Player.GetComponent<Player>();
@@ -37,6 +43,7 @@ public class Player_Attack : MonoBehaviour
             if (Player_P.Ssize < 45) //쏠 수 있는 먹물이 남아있음.
             {
                 Instantiate(gun, Player_T.position, Quaternion.identity); //발사
+                S = true;
 
                 if (Player_P.Ssize % 10 < 5) // 20% 차감
                 {
@@ -57,5 +64,21 @@ public class Player_Attack : MonoBehaviour
                 Debug.Log("먹물을 모두 사용했음.");
             }
         }
+
+        if (S)
+        {
+            S_T += Time.deltaTime;
+
+            if (S_T > 0.25)
+            {
+                S_T = 0f;
+                S = false;
+            }
+            Debug.Log(S);
+        }
+
+        anim.SetBool("H", Hammer.activeSelf);
+        anim.SetBool("S", S);
+
     }
 }
