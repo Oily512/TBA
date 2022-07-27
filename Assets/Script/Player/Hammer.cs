@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hammer : MonoBehaviour
 {
-    Monster Monster;
+    Heart Hrt;
 
     private float time = 0;
 
@@ -17,6 +17,7 @@ public class Hammer : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+
         if (time > 0.3f)
         {
             time = 0f;
@@ -28,9 +29,8 @@ public class Hammer : MonoBehaviour
     {
         if (other.tag == "Monster")
         {
-            Monster = other.GetComponent<Monster>();
-            Monster.TakeDamage(5);
+            Hrt = other.GetComponent<Heart>();
+            Hrt.TakeDamage(5);
         }
     }
-
 }

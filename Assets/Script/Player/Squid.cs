@@ -10,7 +10,7 @@ public class Squid : MonoBehaviour
 
     Transform Player;
     Rigidbody2D rd;
-    Monster Monster;
+    Heart Hrt;
 
     // Start is called before the first frame update
     void Start()
@@ -47,8 +47,8 @@ public class Squid : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Monster"))
         {
-            Monster = other.GetComponent<Monster>();
-            Monster.TakeDamage(3);
+            Hrt = other.GetComponent<Heart>();
+            Hrt.TakeDamage(3);
             Destroy(gameObject);
         }
 

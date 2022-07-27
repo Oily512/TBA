@@ -7,11 +7,10 @@ public class Trash : MonoBehaviour
     private float speed = 5f;
     private Vector3 dir;
     private float T = 0f;
-    private int dam;
 
     GameObject Monster;
     Transform monster_T;
-    Monster monster_S;
+    Heart monster_S;
     Rigidbody2D rd;
     Player Player;
 
@@ -20,10 +19,9 @@ public class Trash : MonoBehaviour
     {
         Monster = GameObject.FindGameObjectWithTag("Monster");
         monster_T = Monster.GetComponent<Transform>();
-        monster_S = Monster.GetComponent<Monster>();
+        monster_S = Monster.GetComponent<Heart>();
         rd = GetComponent<Rigidbody2D>();
 
-        dam = monster_S.damage;
         dir = monster_T.rotation.eulerAngles;
     }
 
@@ -54,7 +52,7 @@ public class Trash : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Player = other.GetComponent<Player>();
-            Player.TakeDamage(dam);
+            Player.TakeDamage(monster_S.damage);
 
             Destroy(gameObject);
         }
