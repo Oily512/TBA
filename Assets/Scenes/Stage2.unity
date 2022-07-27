@@ -13208,6 +13208,10 @@ PrefabInstance:
       propertyPath: ran
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3393845551960868044, guid: bef91bf4f806286448a011dc14f054dd, type: 3}
+      propertyPath: Trash
+      value: 
+      objectReference: {fileID: 8298697552633391494, guid: 49a68f393bc358145854b0e0b62b4788, type: 3}
     - target: {fileID: 3393845552273547348, guid: bef91bf4f806286448a011dc14f054dd, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.100603

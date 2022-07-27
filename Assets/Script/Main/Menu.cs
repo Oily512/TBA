@@ -5,16 +5,17 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     public GameObject Game;
+    public GameObject Game2;
     public GameObject Option; //설정창
+    public GameObject Control; //버튼 설명창
 
     // Start is called before the first frame update
     void Start()
     {
-        Game = GameObject.FindGameObjectWithTag("GameController"); //스테이지 진입 탭
-        Option = GameObject.FindGameObjectWithTag("Menu"); //설정창
-
         Option.SetActive(false);
         Game.SetActive(false);
+        Game2.SetActive(false);
+        Control.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,13 +23,14 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) //스테이지 진입 탭
         {
-            if (!Game.activeSelf)
+            if (Game.activeSelf || Game2.activeSelf)
             {
-                Game.SetActive(true);
+                Game.SetActive(false);
+                Game2.SetActive(false);
             }
             else
             {
-                Game.SetActive(false);
+                Game.SetActive(true);
             }
         }
         else if (Input.GetKeyDown(KeyCode.Escape)) //설정창
@@ -42,5 +44,17 @@ public class Menu : MonoBehaviour
                 Option.SetActive(false);
             }
         }
+    }
+
+    public void Triangle()
+    {
+        Game.SetActive(false);
+        Game2.SetActive(true);
+    }
+
+    public void Triangle2()
+    {
+        Game.SetActive(true);
+        Game2.SetActive(false);
     }
 }

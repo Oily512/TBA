@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    //보스 설정
+    public int heart;
+
+    private float v = 3f;
+
     // Start is called before the first frame update
     void Start()
     {

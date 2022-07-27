@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    private Animator anim;
+    private Animator anim; 
 
-    private int heart = 10;
-    private float v = 0f;
-    private float point;
-    private float dis_P;
-    private float time = 0.7f;
+    private int heart = 10; //목숨
+    private float v = 0f; //속력
+    private float point; //현재 x좌표
+    private float dis_P; //사거리
+    private float time = 0.7f; //공격 타이밍. 바로 공격하기 위함. 
 
-    public float ran = 8f;
-    public int damage = 3;
+    public float ran = 8f; //이동 범위
+    public int damage = 3; //공격력
 
-    public GameObject Sight;
-    public GameObject Player;
-    public GameObject Trash;
+    public GameObject Sight; //에디터에서 매치
+    public GameObject Player; //에디터에서 매치
+    public GameObject Trash; //에디터에서 매치
 
     Sight sight;
     Rigidbody2D Place;
@@ -25,42 +25,42 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        v = Random.Range(3, 6);
-        dis_P = Random.Range(4, 8);
+        v = Random.Range(3, 6); //속력 랜덤
+        dis_P = Random.Range(4, 8); //사거리 랜덤
 
-        Place = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        sight = Sight.GetComponent<Sight>();
+        Place = GetComponent<Rigidbody2D>(); 
+        anim = GetComponent<Animator>(); 
+        sight = Sight.GetComponent<Sight>(); //시야 오브젝트의 클래스를 가져옴.
 
         Player = GameObject.FindGameObjectWithTag("Player");
-        point = transform.position.x;
+        point = transform.position.x; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(sight.meet == true) //오류나면 meet 변수 따로 쓰는 걸로 수정
+        if(sight.meet == true) //사거리 안으로 들어왔으면 공격 루틴.
         {
             Debug.Log("Player 공격");
-            attack();
+            attack(); //공격할 때의 움직임. 
 
             time += Time.deltaTime;
 
-            if (time >= 1.0f)
+            if (time >= 1.0f) //시간되면 공격
             {
                 Instantiate(Trash, gameObject.transform.position, Quaternion.identity);
-                time = 0f;
+                time = 0f; //시간 초기화
             }
         }
-        else if (sight.meet == false)
+        else if (sight.meet == false) //사거리 안에 없음.
         {
-            move();
+            move(); //평소의 움직임. 
         }
 
-        anim.SetBool("A", sight.meet);
+        anim.SetBool("A", sight.meet); //사거리 안에 있으면 공격 모션. 
     }
 
-    private void move()
+    private void move() //좌우로 번갈아 움직이기. 
     {
         if (point >= Place.transform.position.x)
         {
@@ -79,7 +79,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    private void attack()
+    private void attack() //공격할 때의 움직임. 
     {
         //Player 바라보기
         if (0 < Player.transform.position.x - this.transform.position.x)
@@ -106,9 +106,8 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage) //데미지 입는 함수.
     {
-        Debug.Log("몬스터가 맞았다");
         heart -= damage;
         if(heart <= 0)
         {
