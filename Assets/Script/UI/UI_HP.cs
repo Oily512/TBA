@@ -16,6 +16,7 @@ public class UI_HP : MonoBehaviour
     {
         player = P.GetComponent<Player>();
         rt = gameObject.GetComponent<RectTransform>();
+
         size = player.heart;
     }
 

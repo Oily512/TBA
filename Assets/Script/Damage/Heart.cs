@@ -11,6 +11,7 @@ public class Heart: MonoBehaviour
 
     private float point; //현재 x좌표
 
+    Renderer rend;
     Rigidbody2D Rd;
 
     // Start is called before the first frame update
@@ -18,12 +19,12 @@ public class Heart: MonoBehaviour
     {
         point = transform.position.x;
         Rd = GetComponent<Rigidbody2D>();
+        rend = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void move() //좌우로 번갈아 움직이기. 
@@ -48,6 +49,7 @@ public class Heart: MonoBehaviour
     public void TakeDamage(int damage) //데미지 입는 함수.
     {
         heart -= damage;
+
         if (heart <= 0)
         {
             Destroy(gameObject);

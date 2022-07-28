@@ -5,42 +5,64 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour
 {
     //보스 설정
-    public int heart;
     public GameObject Trash; //wave
     public GameObject field;
 
-    private Vector3 spon;
+    public bool W = false;
+    public bool A = false;
+
+    Animator anim;
+
+    private int count = 0;
+    private float time = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        field.SetActive(false);
+        anim = GetComponent<Animator>();
 
-        spon = new Vector3(this.transform.position.x, this.transform.position.y - 2f, this.transform.position.z);
+        field.SetActive(false);
+        Trash.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Instantiate(Trash, spon, Quaternion.identity);
+        time += Time.deltaTime;
+
+        Debug.Log(W);
+        Debug.Log(A);
+
+        if (time  >= 6f)
+        {
+            if (count%3 == 0)
+            {
+                wave();
+                time = 0f;
+            }
+            else
+            {
+                strike();
+                time = 3f;
+            }
+
+            count += 1;
+        }
+
+        anim.SetBool("W", W); //wave 시간동안
+        anim.SetBool("A", A); //strike 시간동안
     }
 
     void wave() //지면에 좌라락
     {
-        Instantiate(Trash, spon, Quaternion.identity);
+        W = true;
+        Trash.SetActive(true);
+        Trash.transform.position = this.transform.position + new Vector3(0f, -3.8f, 0f); //보스 위치에서 시작
     }
 
     void strike() //근접공격. 내려치기
     {
+        A = true;
         field.SetActive(true);
-    }
-
-    public void TakeDamage(int damage) //데미지 입는 함수.
-    {
-        heart -= damage;
-        if (heart <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }

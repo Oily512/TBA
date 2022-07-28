@@ -7,12 +7,12 @@ public class Player_Attack : MonoBehaviour
     public GameObject gun; //유니티로 부여 - Squid 오브젝트
     public bool attack = false;
     public int Ssize = 0;
+    public GameObject Hammer;
 
     private bool S = false;
     private float S_T = 0f;
 
     private Animator anim;
-    private GameObject Hammer;
     private GameObject Player;
 
     Transform Player_T;
@@ -27,7 +27,6 @@ public class Player_Attack : MonoBehaviour
         Player_T = Player.GetComponent<Transform>();
         Player_P = Player.GetComponent<Player>();
 
-        Hammer = GameObject.FindGameObjectWithTag("Hammer");
         Hammer.SetActive(false);
     }
 
@@ -56,7 +55,6 @@ public class Player_Attack : MonoBehaviour
                 else
                 {
                     Player_P.Ssize += (10 - (Player_P.Ssize % 10));
-
                 }
             }
             else //먹물이 남아있지 않음. size(쓴 먹물 수)가 45인 것.
