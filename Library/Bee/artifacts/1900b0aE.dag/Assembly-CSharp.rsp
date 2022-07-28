@@ -380,6 +380,7 @@
 "Assets/Script/Boss/Stage2.cs"
 "Assets/Script/Boss/Stage3.cs"
 "Assets/Script/Boss/Stage4.cs"
+"Assets/Script/Boss/Stage5.cs"
 "Assets/Script/CameraControll.cs"
 "Assets/Script/Damage/Boss/Boss1.cs"
 "Assets/Script/Damage/Boss/effect1.cs"
