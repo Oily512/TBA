@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour
 {
     //보스 설정
-    public GameObject Trash; //wave
+    public GameObject effect; //wave
     public GameObject field;
 
     public bool W = false;
@@ -21,8 +21,8 @@ public class Boss1 : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
+        effect.SetActive(false);
         field.SetActive(false);
-        Trash.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,8 +56,8 @@ public class Boss1 : MonoBehaviour
     void wave() //지면에 좌라락
     {
         W = true;
-        Trash.SetActive(true);
-        Trash.transform.position = this.transform.position + new Vector3(0f, -3.8f, 0f); //보스 위치에서 시작
+        effect.SetActive(true);
+        effect.transform.position = this.transform.position + new Vector3(0f, -3.8f, 0f); //보스 위치에서 시작
     }
 
     void strike() //근접공격. 내려치기

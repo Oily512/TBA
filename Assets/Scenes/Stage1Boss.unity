@@ -944,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3393845551960868035, guid: ad30daba5bb7a2c4fa0c6d44c3aa3a7a, type: 3}
       propertyPath: m_Constraints
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3393845551960868035, guid: ad30daba5bb7a2c4fa0c6d44c3aa3a7a, type: 3}
       propertyPath: m_GravityScale
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6b9e8557bbfaf49bcf4454333db13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trash: {fileID: 671992582}
+  effect: {fileID: 671992582}
   field: {fileID: 1707732244}
   W: 0
   A: 0
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d03eb7bf3dd949a75fb6aa19b2697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart: 40
+  heart: 80
   damage: 10
   v: 1
   ran: 5
@@ -1292,6 +1292,10 @@ PrefabInstance:
       propertyPath: P
       value: 
       objectReference: {fileID: 364522428}
+    - target: {fileID: 1928432767178296895, guid: 3f4bf807bc1ae344898aa4761e8c8df8, type: 3}
+      propertyPath: S
+      value: 
+      objectReference: {fileID: 637543685}
     - target: {fileID: 1928432767213960560, guid: 3f4bf807bc1ae344898aa4761e8c8df8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1382,6 +1386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4bf807bc1ae344898aa4761e8c8df8, type: 3}
+--- !u!1 &637543685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1928432765713475419, guid: 3f4bf807bc1ae344898aa4761e8c8df8, type: 3}
+  m_PrefabInstance: {fileID: 637543684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671992582
 GameObject:
   m_ObjectHideFlags: 0

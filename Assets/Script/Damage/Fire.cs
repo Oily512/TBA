@@ -5,6 +5,8 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     private float time = -3f;
+    private float v = 0.45f;
+
     Player P1;
 
     // Start is called before the first frame update
@@ -19,7 +21,7 @@ public class Fire : MonoBehaviour
         time += Time.deltaTime;
         if (time > 0.1f)
         {
-            this.transform.Translate(new Vector3(0.45f, 0f, 0f));
+            this.transform.Translate(new Vector3(v, 0f, 0f));
             time = 0f;
         }
     }
@@ -30,7 +32,11 @@ public class Fire : MonoBehaviour
         {
             P1 = other.GetComponent<Player>();
             P1.TakeDamage(10000);
-            Debug.Log("ав╬З╢ы");
+        }
+
+        if (other.tag == "Item")
+        {
+            v = 6.4f;
         }
     }
 }
