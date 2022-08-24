@@ -2822,7 +2822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5399855626085233933, guid: 357afdf401bfd774e979d33554a9c26f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5399855626085233933, guid: 357afdf401bfd774e979d33554a9c26f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9344,7 +9344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5399855626085233933, guid: 357afdf401bfd774e979d33554a9c26f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5399855626085233933, guid: 357afdf401bfd774e979d33554a9c26f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19137,6 +19137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 564913997496409091, guid: a4f5e6d23a6615a4ab85b0d9bbffbf27, type: 3}
+      propertyPath: Hammer
+      value: 
+      objectReference: {fileID: 2013740086}
     - target: {fileID: 564913997496409092, guid: a4f5e6d23a6615a4ab85b0d9bbffbf27, type: 3}
       propertyPath: m_Size.x
       value: 0.8556435
@@ -19207,6 +19211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4f5e6d23a6615a4ab85b0d9bbffbf27, type: 3}
+--- !u!1 &2013740086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 564913998963431296, guid: a4f5e6d23a6615a4ab85b0d9bbffbf27, type: 3}
+  m_PrefabInstance: {fileID: 2013740085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2017008851
 PrefabInstance:
   m_ObjectHideFlags: 0
